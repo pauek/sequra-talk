@@ -4,7 +4,7 @@ Si quieres utilizar la presentación, instala el paquete `present` con
 
     go get code.google.com/p/go.tools/cmd/present
 
-sitúate en el directorio donde está el fichero `sequra.slide  y ejecuta
+sitúate en el directorio donde está el fichero `sequra.slide` y ejecuta
 
     present
 
