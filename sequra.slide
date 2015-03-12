@@ -9,13 +9,43 @@ pauek@minidosis.org
 http://pauek.info
 @pauek
 
-* First slide
+* Go
 
-- bla1
-- bla2
+* Características de Go
 
-* Second slide
+- C mejorado (compilado, tipado estático)
+- Concurrencia bien integrada (CSP)
+- Simple
+- Sin clases, solo _interfaces_
+- Sin _templates_ (tipos parametrizados o _generics_)
+- Con "garbage collection"
 
-- bla3
-- bla4
+* Fortalezas de Go
 
+- Compila muy rápido
+- Bien diseñado
+- Librería estándar estelar
+- Documentación para pros
+- Comunidad de _cracks_
+
+* Hola mundo
+
+.play hello.go 
+
+* Paquetes
+
+Una idea sobre cómo son los paquetes
+
+* Documentación
+
+Apliación externa a golang.org pero un referente:
+
+.link http://godoc.org http://godoc.org
+
+* Ejemplo: chat roulette
+
+
+
+* Código fuente de la charla
+
+.link https://github.com/pauek/sequra-talk https://github.com/pauek/sequra-talk

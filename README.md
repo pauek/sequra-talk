@@ -1,4 +1,4 @@
-# Presentació sobre Go en Sequra
+# Presentación sobre Go en Sequra
 
 Si quieres utilizar la presentación, instala el paquete `present` con
 
