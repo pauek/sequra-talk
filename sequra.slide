@@ -9,43 +9,136 @@ pauek@minidosis.org
 http://pauek.info
 @pauek
 
-* Go
-
-* Características de Go
-
-- C mejorado (compilado, tipado estático)
-- Concurrencia bien integrada (CSP)
-- Simple
-- Sin clases, solo _interfaces_
-- Sin _templates_ (tipos parametrizados o _generics_)
-- Con "garbage collection"
-
-* Fortalezas de Go
-
-- Compila muy rápido
-- Bien diseñado
-- Librería estándar estelar
-- Documentación para pros
-- Comunidad de _cracks_
-
-* Hola mundo
-
-.play hello.go 
-
-* Paquetes
-
-Una idea sobre cómo son los paquetes
-
-* Documentación
-
-Apliación externa a golang.org pero un referente:
-
-.link http://godoc.org http://godoc.org
-
-* Ejemplo: chat roulette
-
-
-
 * Código fuente de la charla
 
 .link https://github.com/pauek/sequra-talk https://github.com/pauek/sequra-talk
+
+#--------------------------------------------------
+
+* Sobre Go
+
+* Características de Go
+
+- Un mejor C (compilado; tipado estático)
+- Con "garbage collection"
+- [[http://golang.org/doc/faq#Why_doesnt_Go_have_feature_X][Simple]]
+- Sin clases, solo [[http://golang.org/ref/spec#Interface_types][_interfaces_]]
+- Sin _templates_ (tipos parametrizados o _generics_)
+- Concurrencia bien integrada ([[http://en.wikipedia.org/wiki/Communicating_sequential_processes][CSP]])
+
+* Fortalezas de Go
+
+- Compila muy rápido (análisis de dependencias super-simple)
+- Diseño madurado (consenso de 3 visiones)
+- [[http://golang.org/ref/spec][Especificación]] corta (relativamente)
+- [[http://golang.org/pkg][Librería estándar estelar]]
+- [[http://godoc.org][Documentación]] precisa y corta. 
+- Comunidad de _cracks_ 
+
+* Hola mundo
+
+.play hello.go
+
+#--------------------------------------------------
+
+* Menú degustación
+
+* Declaración corta de variables
+
+Las variables se pueden declarar implícitamente con *":="*
+
+.play -edit short-vardecl.go
+
+* Valor por defecto cero
+
+El valor inicial de *todas* las variables es 0 o equivalente
+
+.play -edit zero.go
+
+* Tipos básicos
+
+.play -edit tipos-basicos.go
+
+Las variables sin usar son un error... ;)
+
+* If
+
+.play -edit if1.go
+
+* If con instrucción previa
+
+.play -edit if2.go
+
+* For
+
+Sin paréntesis. No existe el `while`.
+
+.code for.go /_1/,/_1/
+.code for.go /_2/,/_2/
+.code for.go /_3/,/_3/
+.code for.go /_4/,/_4/
+
+* Múltiples resultados
+
+.play -edit multiple-results.go
+
+* Valores de retorno con nombre
+
+.play -edit return-values.go
+
+* Métodos
+
+Un método es una función asociada a un tipo (cualquiera)
+
+* Interfaces
+
+Lista de funciones
+
+#--------------------------------------------------
+
+* Concurrencia
+
+* Conceptos
+
+*Gorutinas*
+
+- Funciones que se lanzan concurrentemente (prefijo `go`).
+- Se reparten en los threads disponibles.
+- Baratas, se pueden crear miles.
+
+*Canales*
+
+- Una via de comunicación entre gorutinas.
+- Bloquan la gorutina escritora/lectora hasta poder transferir el valor.
+- Permiten comunicar valores de un tipo (cualquiera, incluso canales!).
+
+* Hola
+
+.play -edit say-hello.go
+
+* Fibonacci
+
+.play -edit fib-gen.go
+
+* Bomba
+
+.play -edit bomb.go
+
+* Árboles equivalentes (1/3)
+
+Problema: determinar si las secuencias de valores de las hojas de dos árboles son la misma.
+
+.image tree.png 250 700 
+
+En el ejemplo: 1, 1, 2, 3, 5, 8, 13.
+
+* Árboles equivalentes (2/3)
+
+.code equiv-trees.go /Tree/,/----/
+
+* Árboles equivalentes (3/3)
+
+.code equiv-trees.go /Same/,/^$/
+
+* Ejemplo: chat roulette
+
