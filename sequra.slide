@@ -35,13 +35,33 @@ http://pauek.info
 - [[http://godoc.org][Documentación]] precisa y corta. 
 - Comunidad de _cracks_ 
 
+* Compila rápido?
+
+.image compiling.png 540 620
+
+* Quién usa Go?
+
+- Google
+- YouTube ([[https://github.com/youtube/vitess][vitess]], escalado de MySQL)
+- Heroku (Doozer, base de datos distribuida)
+- CloudFlare (CDN)
+- Docker
+- Canonical (JuJu)
+- SoundCloud
+
+Del blog: [[http://blog.golang.org/4years]["4 years of Go"]].
+
+* GitHut
+
+.image githut.png 600 900
+
 * Hola mundo
 
 .play hello.go
 
 #--------------------------------------------------
 
-* Menú degustación
+* "Menú degustación"
 
 * Declaración corta de variables
 
@@ -88,11 +108,57 @@ Sin paréntesis. No existe el `while`.
 
 * Métodos
 
-Un método es una función asociada a un tipo (cualquiera)
+.play -edit vertex.go
 
-* Interfaces
+* Métodos sobre tipos básicos
 
-Lista de funciones
+.play -edit abs-float.go
+
+* Interfaces (1/4)
+
+Un `interface` es una lista de métodos
+
+.code geometry.go /interface/,/^$/
+
+* Interfaces (2/4)
+
+Si un tipo tiene todos los métodos satisface el `interface`.
+
+.code geometry.go /square/,/circle/
+
+* Interfaces (3/4)
+
+Si un tipo tiene todos los métodos satisface el `interface`.
+
+.code geometry.go /circle/,/main/
+
+* Interfaces (4/4)
+
+Si un tipo tiene todos los métodos satisface el `interface`.
+
+.play geometry.go /measure/,
+
+* Ejemplos
+
+`Fprintf` recibe como primer parámetro un `io.Writer`
+
+      type Writer interface {
+         Write(p []byte) (n int, err error)
+      }
+
+`sort.Interface`
+
+      type Interface interface {
+         Len() int
+         Less(i, j int) bool
+         Swap(i, j int)
+      }
+
+`http.Handler`
+ 
+      type Handler interface {
+         ServeHTTP(ResponseWriter, *Request)
+      }
 
 #--------------------------------------------------
 
@@ -140,5 +206,14 @@ En el ejemplo: 1, 1, 2, 3, 5, 8, 13.
 
 .code equiv-trees.go /Same/,/^$/
 
-* Ejemplo: chat roulette
+* Ejemplos de servidores
 
+* Servidor mínimo
+
+.code server1.go
+
+* Servidor de ficheros
+
+.code webshare.go
+
+* 
