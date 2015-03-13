@@ -211,10 +211,12 @@ En el ejemplo: 1, 1, 2, 3, 5, 8, 13.
 
 * Servidor mínimo
 
-.code server1.go
+.play -edit server1.go
 
 * Servidor de ficheros
 
 .code webshare.go
 
-* 
+* Chat
+
+.image diagrama_chat.png 550 550

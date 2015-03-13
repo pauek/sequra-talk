@@ -7,7 +7,7 @@ import (
 )
 
 func index(w http.ResponseWriter, req *http.Request) {
-	fmt.Println("*")
+	fmt.Println("index")
 	fmt.Fprintf(w, "hola!")
 }
 
